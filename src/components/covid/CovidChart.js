@@ -3,12 +3,6 @@ import { Line } from "react-chartjs-2";
 import moment from "moment-timezone";
 import DataContext from "../context/DataContext";
 
-const divStyle = {
-  position: "relative",
-  width: "100%",
-  marginTop: "30px",
-};
-
 const CovidLineChart = () => {
   const currentYear = moment().tz("Asia/Tokyo").format("YYYY");
   const currentMonth = moment().tz("Asia/Tokyo").format("MMMM");
@@ -67,7 +61,7 @@ const CovidLineChart = () => {
     ],
   };
   return (
-    <div style={divStyle}>
+    <div className="chart-wraper">
       <Line
         data={graphDetails}
         options={{

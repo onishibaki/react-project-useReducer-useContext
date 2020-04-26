@@ -1,29 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import headerStyle from "../../styles/header/HeaderStyle";
 
 const Header = () => {
+  const activeStyleLink = { borderBottom: "2px solid #5F9EA0" };
   return (
     <header className="main-header">
       <div className="container">
         <nav>
-          <ul style={headerStyle.ulStyle}>
-            <li style={headerStyle.liStyle}>
-              <NavLink
-                to="/"
-                style={headerStyle.aStyle}
-                activeStyle={headerStyle.activeStyleLink}
-                exact
-              >
+          <ul>
+            <li>
+              <NavLink to="/" activeStyle={activeStyleLink} exact>
                 Home
               </NavLink>
             </li>
-            <li style={headerStyle.liStyle}>
-              <NavLink
-                style={headerStyle.aStyle}
-                to="/covid"
-                activeStyle={headerStyle.activeStyleLink}
-              >
+            <li>
+              <NavLink to="/covid" activeStyle={activeStyleLink}>
                 Covid Tracker
               </NavLink>
             </li>

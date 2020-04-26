@@ -6,8 +6,20 @@ import {
   IconDeath,
 } from "../Icon/IconList";
 import LatestDetail from "./LatestDetail";
-import covidStyle from "../../styles/content/covidStyle";
 import DataContext from "../context/DataContext";
+
+const posStyle = {
+  marginRight: "12px",
+  color: "#FF8C00",
+};
+const deStyle = {
+  marginRight: "12px",
+  color: "#B22222",
+};
+const recStyle = {
+  marginRight: "12px",
+  color: "#006400",
+};
 
 const DisplayDetail = () => {
   const dataContext = useContext(DataContext);
@@ -27,13 +39,13 @@ const DisplayDetail = () => {
   } = latestDate;
 
   return (
-    <div>
-      <h1 style={covidStyle.h1Style}>COVID-19 in {country}</h1>
-      <h5 style={covidStyle.h5Style}>Last updated: {covid_date}</h5>
+    <div className="content-details-wraper">
+      <h1>COVID-19 in {country}</h1>
+      <h5>Last updated: {covid_date}</h5>
       <ul>
-        <li style={covidStyle.dataDetailStyle}>
-          <h3 style={covidStyle.h3Style}>
-            <IconPositive />
+        <li>
+          <h3>
+            <IconPositive propStyle={posStyle} />
             Cases
           </h3>
           {loading ? (
@@ -45,9 +57,9 @@ const DisplayDetail = () => {
             />
           )}
         </li>
-        <li style={covidStyle.dataDetailStyle}>
-          <h3 style={covidStyle.h3Style}>
-            <IconDeath />
+        <li>
+          <h3>
+            <IconDeath propStyle={deStyle} />
             Deaths
           </h3>
           {loading ? (
@@ -56,9 +68,9 @@ const DisplayDetail = () => {
             <LatestDetail totalData={TotalDeath} singleData={covid_death} />
           )}
         </li>
-        <li style={covidStyle.dataDetailStyle}>
-          <h3 style={covidStyle.h3Style}>
-            <IconRecovery />
+        <li>
+          <h3>
+            <IconRecovery propStyle={recStyle} />
             Recoveries
           </h3>
           {loading ? (

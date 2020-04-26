@@ -1,11 +1,10 @@
 import React from "react";
-import covidStyle from "../../styles/content/covidStyle";
 
 const LatestDetail = ({ totalData, singleData }) => {
   return (
-    <p style={covidStyle.pStyle}>
+    <p>
       {totalData}
-      <span style={covidStyle.spanStyle}>( +{singleData} )</span>
+      <span>( +{singleData} )</span>
     </p>
   );
 };
