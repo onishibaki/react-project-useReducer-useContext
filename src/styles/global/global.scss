@@ -20,6 +20,10 @@ body {
   background: #f2f2f2;
   padding-top: 35px;
   padding-bottom: 64px;
+  @include breakpoint(ipad-landscape) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -45,4 +49,10 @@ a {
   max-width: 960px;
   width: 100%;
   margin: 0 auto;
+  @include breakpoint(ipad-landscape) {
+    padding: 0 15px;
+  }
+  @include breakpoint(mobile-portrait) {
+    width: 320px;
+  }
 }
